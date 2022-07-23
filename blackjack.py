@@ -33,6 +33,7 @@ class Card():
         return self.rank + " of " + self.suit
 
 
+
 class Deck():
     def __init__(self):
         self.all_cards = []
@@ -84,16 +85,8 @@ class Player():
         return final_hand
     
     def draw_a_card(self, deck):
-
         return deck.deal_a_card()
 
-def get_player_name():
-    name = input("What is your name? ")
-    if name and name != "":
-        return name
-    else:
-        print("Please insert your name")
-        get_player_name()
 
 def should_i_deal_a_card():
     answer = input("Do you want another card? [Y][n] ") or "Y"
@@ -164,7 +157,7 @@ def begin_game():
                     currently_dealing = False
                 else:
                     print("Enter a valid answer")
-                    should_i_deal_a_card(player, deck)
+                    continue
                 
                 
             print("The dealer has " + str(dealer.hand_str))        
